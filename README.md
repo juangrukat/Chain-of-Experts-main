@@ -37,6 +37,28 @@ The framework consists of several key components working together:
 6. **Backward Pass** (if reflection enabled): Experts refine their contributions based on test feedback
 7. **Iteration**: Process repeats for up to `max_trials` iterations until convergence
 
+## Use Cases
+
+### Optimization Fields
+
+Chain-of-Experts can be applied to various optimization problems across different domains:
+
+- **Supply Chain Optimization**: Optimize inventory management, supplier selection, and distribution networks by modeling complex constraints and objectives through collaborative expert analysis.
+
+- **Resource Allocation**: In manufacturing or project management, efficiently allocate limited resources by breaking down problems into modeling, parameter extraction, and programming components.
+
+- **Production Planning**: Determine optimal production schedules considering machine capacities, labor constraints, and demand forecasts.
+
+### Transportation Fields
+
+The framework excels in solving transportation-related optimization problems:
+
+- **Delivery Route Optimization**: Solve vehicle routing problems (VRP) to minimize delivery costs and times, accounting for vehicle capacities, time windows, and traffic conditions.
+
+- **Navigation and Path Finding**: Optimize routes in transportation networks for autonomous vehicles or GPS systems, considering real-time traffic, road conditions, and user preferences.
+
+- **Fleet Management**: Optimize fleet composition and assignment for transportation companies to maximize efficiency and reduce operational costs.
+
 ## Data Storage and Results
 
 ### Input Data Structure
