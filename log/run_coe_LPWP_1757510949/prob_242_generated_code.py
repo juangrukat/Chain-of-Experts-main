@@ -1,0 +1,15 @@
+from scipy.optimize import linprog
+
+def prob_242():
+    c = [0, 0, 1]  # Coefficients for the objective function (minimize sodium intake)
+    A = [[-300, -200, 0], [-15, -8, 0], [0, -0.6, -1]]  # Coefficients for the inequality constraints
+    b = [-2000, -90, 0]  # Right-hand side values for the inequality constraints
+
+    res = linprog(c, A_ub=A, b_ub=b, bounds=(0, None))
+
+    return res
+
+result = prob_242()
+print("Number of bowls of salmon to eat:", round(result.x[0]))
+print("Number of bowls of eggs to eat:", round(result.x[1]))
+print("Minimum sodium intake:", round(result.fun))

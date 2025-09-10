@@ -1,0 +1,21 @@
+```python
+from scipy.optimize import linprog
+
+def prob_280(bus, personal_car):
+    """
+    Args:
+        bus: an integer, represents the number of buses
+        personal_car: an integer, represents the number of personal cars
+    Returns:
+        obj: an integer, the total number of vehicles
+    """
+    c = [1, 1]  # Coefficients of the objective function to minimize x + y
+    A = [[9, 4], [-1, 1]]  # Coefficients of the constraints
+    b = [100, 0]  # Right-hand side of the constraints
+    bounds = [(0, None), (5, None)]  # Bounds for variables x and y
+
+    res = linprog(c, A_ub=A, b_ub=b, bounds=bounds, method='highs')
+    obj = res.fun  # Total number of vehicles
+
+    return int(obj)
+```

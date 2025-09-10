@@ -1,0 +1,24 @@
+from scipy.optimize import linprog
+
+def prob_273(camel_caravans, desert_trucks):
+    """
+    Args:
+        camel_caravans: an integer, the number of camel caravans
+        desert_trucks: an integer, the number of desert trucks
+        
+    Returns:
+        total_number_of_hours: an integer, the total number of hours required
+    """
+    c = [12, 5]  # Coefficients of x (camel caravans) and y (desert trucks)
+    A = [[50, 150]]  # Coefficients of x and y in the constraint equation
+    b = [1500]  # Right-hand side of the constraint equation
+    bounds = [(0, None), (0, None)]  # Bounds for x and y (non-negative)
+
+    res = linprog(c, A_eq=A, b_eq=b, bounds=bounds, method='highs')
+
+    x_opt = res.x[0]
+    y_opt = res.x[1]
+
+    total_number_of_hours = c[0]*x_opt + c[1]*y_opt
+
+    return total_number_of_hours
