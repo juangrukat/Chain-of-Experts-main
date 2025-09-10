@@ -1,4 +1,3 @@
-import os
 import json
 import numpy as np
 from comment import Comment
@@ -8,7 +7,6 @@ from evaluator import Evaluator
 from experts import (
     ModelingExpert, 
     ProgrammingExpert,
-    LPFileGenerator,
     ModelingKnowledgeSupplementExpert,
     ParameterExtractor,
     CodeReviewer,

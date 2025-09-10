@@ -2,8 +2,6 @@ from langchain_core.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain_openai import ChatOpenAI
 
-from utils import extract_code_from_string
-
 
 def solve(problem_data, model_name='gpt-5-2025-08-07'):
     problem_description = problem_data['description']
